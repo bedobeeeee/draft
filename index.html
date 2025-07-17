@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amna Irfan - Youth Delegate & Psychology Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 25%, #a855f7 50%, #c084fc 75%, #ddd6fe 100%);
+            color: #fff;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #c77dff, #9d4edd);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: rgba(199, 125, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ddd6fe, #a855f7, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            0% { filter: drop-shadow(0 0 5px rgba(224, 170, 255, 0.5)); }
+            100% { filter: drop-shadow(0 0 20px rgba(157, 78, 221, 0.8)); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(157, 78, 221, 0.3);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+
+        .header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(196, 132, 252, 0.7));
+            margin-bottom: 0;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad1"><stop offset="0%" style="stop-color:rgba(224,170,255,0.1)"/><stop offset="100%" style="stop-color:rgba(157,78,221,0.1)"/></radialGradient></defs><circle cx="200" cy="200" r="3" fill="url(%23grad1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="2" fill="url(%23grad1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="600" cy="700" r="4" fill="url(%23grad1)"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></circle></svg>') repeat;
+            animation: starfield 20s linear infinite;
+        }
+
+        @keyframes starfield {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-1000px); }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .profile-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+
+        .profile-pic {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            z-index: 10;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .silhouette {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(224, 170, 255, 0.1));
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            box-shadow: 
+                0 0 50px rgba(224, 170, 255, 0.6),
+                0 0 100px rgba(157, 78, 221, 0.4),
+                inset 0 0 50px rgba(255, 255, 255, 0.1);
+            animation: profileGlow 4s ease-in-out infinite alternate;
+        }
+
+        .silhouette::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(224, 170, 255, 0.3), transparent);
+            border-radius: 50%;
+            animation: headGlow 3s ease-in-out infinite alternate;
+        }
+
+        .silhouette::after {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(224, 170, 255, 0.2), rgba(157, 78, 221, 0.2));
+            border-radius: 60px 60px 40px 40px;
+            animation: bodyGlow 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes profileGlow {
+            0% { 
+                box-shadow: 
+                    0 0 50px rgba(224, 170, 255, 0.6),
+                    0 0 100px rgba(157, 78, 221, 0.4),
+                    inset 0 0 50px rgba(255, 255, 255, 0.1);
+            }
+            100% { 
+                box-shadow: 
+                    0 0 80px rgba(224, 170, 255, 0.8),
+                    0 0 150px rgba(157, 78, 221, 0.6),
+                    inset 0 0 80px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes headGlow {
+            0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+        }
+
+        @keyframes bodyGlow {
+            0% { opacity: 0.4; }
+            100% { opacity: 0.7; }
+        }
+
+
+        .name-background {
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+            user-select: none;
+            animation: nameShift 10s ease-in-out infinite;
+        }
+
+        @keyframes nameShift {
+            0%, 100% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+        }
+
+
+        .scattered-text {
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: textFloat 8s ease-in-out infinite;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scattered-text:hover {
+            transform: scale(1.2) rotate(5deg);
+            opacity: 1 !important;
+            filter: drop-shadow(0 0 10px rgba(224, 170, 255, 0.8));
+        }
+
+        .text-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .text-2 { top: 30%; right: 15%; animation-delay: 1s; }
+        .text-3 { bottom: 25%; left: 8%; animation-delay: 2s; }
+        .text-4 { bottom: 35%; right: 12%; animation-delay: 3s; }
+        .text-5 { top: 60%; left: 20%; animation-delay: 4s; }
+        .text-6 { top: 45%; right: 25%; animation-delay: 5s; }
+
+        @keyframes textFloat {
+            0%, 20% { opacity: 0; transform: translateY(20px); }
+            30%, 70% { opacity: 0.8; transform: translateY(0); }
+            80%, 100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+
+        .floating-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(224, 170, 255, 0.3), rgba(157, 78, 221, 0.1));
+            animation: orbFloat 15s ease-in-out infinite;
+        }
+
+        .orb:nth-child(1) { width: 60px; height: 60px; top: 10%; left: 5%; animation-delay: 0s; }
+        .orb:nth-child(2) { width: 40px; height: 40px; top: 70%; right: 10%; animation-delay: 3s; }
+        .orb:nth-child(3) { width: 80px; height: 80px; bottom: 20%; left: 15%; animation-delay: 6s; }
+        .orb:nth-child(4) { width: 30px; height: 30px; top: 40%; right: 5%; animation-delay: 9s; }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            25% { transform: translateY(-30px) rotate(90deg); opacity: 0.6; }
+            50% { transform: translateY(-60px) rotate(180deg); opacity: 0.9; }
+            75% { transform: translateY(-30px) rotate(270deg); opacity: 0.6; }
+        }
+
+
+        .section {
+            padding: 6rem 1rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+            position: relative;
+            min-height: 80vh;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 214, 10, 0.5), transparent);
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #ffffff;
+            position: relative;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(224, 170, 255, 0.8);
+            animation: sectionTitleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes sectionTitleGlow {
+            0% { 
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 30px rgba(224, 170, 255, 0.6));
+                transform: scale(1);
+            }
+            100% { 
+                filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1)) drop-shadow(0 0 50px rgba(157, 78, 221, 0.8));
+                transform: scale(1.02);
+            }
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            border-radius: 2px;
+            animation: underlineGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes underlineGlow {
+            0% { box-shadow: 0 0 5px rgba(224, 170, 255, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(157, 78, 221, 0.8); }
+        }
+
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .skill-percentage {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+            animation: percentageBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes percentageBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: #e0aaff;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(224, 170, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.3);
+            border-color: rgba(255, 214, 10, 0.3);
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .skill-progress {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(224, 170, 255, 0.1), rgba(157, 78, 221, 0.1));
+            animation: progressShimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes progressShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            border-radius: 6px;
+            transition: width 2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progressGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes progressGlow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #e0aaff, #9d4edd, #c77dff);
+            border-radius: 2px;
+            animation: timelineGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes timelineGlow {
+            0% { box-shadow: 0 0 10px rgba(224, 170, 255, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(157, 78, 221, 0.8); }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: 3rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 20px 40px rgba(157, 78, 221, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -4rem;
+            top: 2.5rem;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #e0aaff, #9d4edd);
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            animation: timelineDot 2s ease-in-out infinite;
+        }
+
+        @keyframes timelineDot {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(224, 170, 255, 0.5); }
+            50% { transform: scale(1.2); box-shadow: 0 0 20px rgba(157, 78, 221, 0.8); }
+        }
+
+
+        .interactive-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 214, 10, 0.1), transparent);
+            border-radius: 50%;
+            animation: bgParticleFloat 20s linear infinite;
+        }
+
+        @keyframes bgParticleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(10deg);
+        }
+
+
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+
+        .awards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .award-card {
+            flex: 1 1 300px;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(224, 170, 255, 0.1), transparent);
+            animation: cardRotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .award-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .award-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(157, 78, 221, 0.3);
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #e0aaff, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        
+        .award-card h3 {
+            margin-bottom: 1rem;
+            color: #e0aaff;
+            font-size: 1.3rem;
+        }
+        
+        .award-card p {
+            color: #f1f5f9;
+            opacity: 1;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 6rem;
+            color: rgba(255, 214, 10, 0.3);
+            font-family: serif;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.2);
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 1.5rem;
+        }
+
+        .reviewer-pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #9d4edd, #e0aaff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            animation: reviewerGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes reviewerGlow {
+            0% { box-shadow: 0 0 10px rgba(224, 170, 255, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(157, 78, 221, 0.6); }
+        }
+
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .hobby-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-15px) rotate(5deg);
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.3);
+        }
+
+        .hobby-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(224, 170, 255, 0.1), rgba(157, 78, 221, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hobby-card:hover::after {
+            opacity: 1;
+        }
+
+        .hobby-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: hobbyBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes hobbyBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(5deg); }
+            75% { transform: translateY(-5px) rotate(-5deg); }
+        }
+
+        .cv-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .cv-button {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: linear-gradient(45deg, #9d4edd, #e0aaff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .cv-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cv-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(157, 78, 221, 0.4);
+            border-color: rgba(224, 170, 255, 0.5);
+        }
+
+        .cv-button:hover::before {
+            left: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-pic {
+                width: 200px;
+                height: 250px;
+            }
+            
+            .name-background {
+                font-size: 4rem;
+            }
+            
+            .scattered-text {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 25%, #a855f7 50%, #c084fc 75%, #ddd6fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #ffd60a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        @keyframes videoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .video-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.3);
+        }
+
+        .bucket-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bucket-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(157, 78, 221, 0.2);
+        }
+
+        .bucket-item.completed {
+            background: rgba(224, 170, 255, 0.1);
+            border-color: rgba(224, 170, 255, 0.3);
+        }
+
+        .bucket-checkbox {
+            font-size: 1.2rem;
+            min-width: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.2);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #9d4edd, #e0aaff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .review-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(157, 78, 221, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Interactive Background -->
+    <div class="interactive-bg" id="interactiveBg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Amna ✨</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="home" class="header">
+        <div class="floating-orbs">
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+        </div>
+        
+        <div class="header-content">
+            <div class="profile-section">
+                <!-- Name Background -->
+                <div class="name-background">AMNA</div>
+                
+                <!-- Profile Picture -->
+                <div class="profile-pic">
+                    <div class="silhouette"></div>
+                </div>
+                
+                <!-- Scattered Text -->
+                <div class="scattered-text text-1">Youth Delegate</div>
+                <div class="scattered-text text-2">Psychology Student</div>
+                <div class="scattered-text text-3">Public Speaker</div>
+                <div class="scattered-text text-4">English Trainer</div>
+                <div class="scattered-text text-5">Team Leader</div>
+                <div class="scattered-text text-6">Empowering Others</div>
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); text-align: center; z-index: 20;">
+            <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem; color: #ffffff;">Amna Irfan</h1>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #e0aaff; font-weight: 600;">Psychology Student • Public Speaker • Youth Delegate</h2>
+            <p style="font-size: 1.3rem; font-style: italic; opacity: 0.9; margin-bottom: 2rem;">"Evolving every day — through effort, empathy, and expression."</p>
+            <p style="max-width: 600px; font-size: 1.1rem; line-height: 1.6; opacity: 0.8;">I'm a Psychology student, certified English language trainer, and someone who's passionate about public speaking, education, and youth development. I believe that honest effort and small acts of growth shape who we become — and I'm here to document and celebrate that journey.</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section" style="padding-top: 8rem; margin-top: 8rem; min-height: 100vh;">
+        <h2>About Me</h2>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+            <div class="skill-card" style="padding: 3rem;">
+                <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 0;">
+                    I'm Amna — someone who doesn't believe in perfect work, but in honest effort, constant learning, and the choice to evolve. I try to understand the world around me and reflect that understanding in how I lead, speak, and serve others.
+                    <br><br>
+                    Whether it's teaching 100+ students, representing Pakistan in international MUNs, or building safe spaces for dialogue — I grow through what I give.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills & Interests</h2>
+        <div class="skills-grid">
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">95% 🎤</div>
+                <span class="skill-icon">🎤</span>
+                <h3>Public Speaking & Debate</h3>
+                <p>MUN Chair/Delegate, Event Hosting, Presentation Skills</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="95"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">92% 👩‍🏫</div>
+                <span class="skill-icon">👩‍🏫</span>
+                <h3>English Language Coaching</h3>
+                <p>LanguageCert Certified, 100+ Students Trained</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="92"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">88% 🧠</div>
+                <span class="skill-icon">🧠</span>
+                <h3>Psychology & Mental Health</h3>
+                <p>Academic Study, Counseling, Awareness Campaigns</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="88"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">90% 👥</div>
+                <span class="skill-icon">👥</span>
+                <h3>Team Leadership</h3>
+                <p>YLC Captain, Workshop Facilitation, Youth Mentorship</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="90"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">85% 🎨</div>
+                <span class="skill-icon">🎨</span>
+                <h3>Content Creation</h3>
+                <p>Video Production, Design & Aesthetics, Podcasting</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="85"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">87% 🤝</div>
+                <span class="skill-icon">🤝</span>
+                <h3>Cross-Cultural Networking</h3>
+                <p>Communication, Empathy, Adaptability, Confidence Building</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="87"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>BS Psychology</h3>
+                <h4>Virtual University of Pakistan</h4>
+                <p><strong>2024–Present</strong></p>
+                <p>4.0 GPA (major) 📚<br>
+                Vice President – Literary Club (AJK Region)<br>
+                Member – Debating Society & Tourism Club<br>
+                <em>Blending theory with real-world impact, focusing on understanding human behavior and applying psychological principles in leadership.</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>College</h3>
+                <h4>Fauji Foundation Schools & College</h4>
+                <p><strong>2020–2022</strong></p>
+                <p>Captain – Sir Syed House 🏆<br>
+                Organizer of school events and inter-house activities<br>
+                <em>Developed leadership skills through house competitions and event management.</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>School</h3>
+                <h4>Bluebells International School</h4>
+                <p><strong>2012–2019</strong></p>
+                <p>Spoken English Ambassador 🎤<br>
+                Silver Medal – IKLC 🥈<br>
+                A+ in Matric ⭐<br>
+                <em>Where my love for public speaking and communication first took root.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work-experience" class="section">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>English Language Trainer</h3>
+                <h4>Foreign Student Services</h4>
+                <p><strong>Current</strong></p>
+                <p>Taught 100+ students (ages 18–50+), helping them prep for language certifications. This experience taught me how to manage stress in learners and adapt to diverse needs. 👩‍🏫</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Private Coach</h3>
+                <h4>Freelance</h4>
+                <p><strong>Ongoing</strong></p>
+                <p>Trained youth in spoken English, writing, and confidence-building. Customized lesson plans for students with different learning styles. Each student teaches me something new about patience and creativity! 💬</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Activities Section -->
+    <section id="extracurricular" class="section">
+        <h2>Beyond the Classroom</h2>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div class="skill-card" style="padding: 3rem; margin-bottom: 3rem;">
+                <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 2rem;">
+                    My learning never stops at lectures — it thrives in the real world. From chairing Model UN conferences to hosting public events and designing community campaigns, I've explored leadership through action. I've worked in private coaching, led language clubs, and facilitated youth development sessions under initiatives like The Evolving Minds and My Vision. Public speaking, content writing, and event moderation are not just skills — they're how I express myself and amplify others.
+                </p>
+                
+                <div class="awards-grid" style="margin-top: 2rem;">
+                    <div class="award-card">
+                        <div class="award-icon">🧠</div>
+                        <h3>The Evolving Minds</h3>
+                        <p>Youth development initiative focused on personal growth and leadership skills</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">👁️</div>
+                        <h3>My Vision</h3>
+                        <p>Community campaign for empowerment and social awareness</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">👩‍🏫</div>
+                        <h3>Private Coaching</h3>
+                        <p>One-on-one English language and communication training</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">🌱</div>
+                        <h3>Youth Trainings</h3>
+                        <p>Workshop facilitation and mentorship programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Events & Leadership Section -->
+    <section id="events-leadership" class="section">
+        <h2>Events & Leadership Experience</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏛️</div>
+                <h3>Youth Policy & Advocacy Dialogue</h3>
+                <p>📍 Muzaffarabad (2024)<br>
+                Presented a resolution draft on youth challenges. Gained hands-on advocacy experience and learned how policy actually gets made!</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h3>Beaconhouse MUN (2025)</h3>
+                <p>🥇 Best Delegate – UNHRC<br>
+                One of my proudest moments representing human rights issues with passion and precision.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎤</div>
+                <h3>HEC Pakistan Universities Debate Championship</h3>
+                <p>🔝 Among top 6 from university<br>
+                Sharpened argumentation and logic skills while representing my university on a national stage.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🌏</div>
+                <h3>Virtual International MUN</h3>
+                <p>🇵🇰 WHO Delegate representing Pakistan<br>
+                Collaborated with Malaysian MUNers and learned about global health policy from different perspectives.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🌸</div>
+                <h3>Asia Youth International MUN</h3>
+                <p>📝 Virtual participation<br>
+                Practiced resolution writing and policy framing while connecting with youth across Asia.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">📚</div>
+                <h3>All Karachi Literature Festival</h3>
+                <p>👥 Youth representative<br>
+                Immersed in literary discourse and connected with writers, poets, and fellow literature enthusiasts.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">✨</div>
+                <h3>Youth Leaders Connect 1.0</h3>
+                <p>🏆 Best Female Participant | Team Captain "Aura+"<br>
+                Completed all activities, networked with 70+ delegates nationwide. This experience really shaped my leadership style!</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎬</div>
+                <h3>National Conference on Shifting Paradigms</h3>
+                <p>📹 Video shortlisted nationally<br>
+                Women's Empowerment Dialogue - proud to contribute to conversations that matter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <h2>Recognitions That Shaped Me</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏅</div>
+                <h3>YLC Best Participant</h3>
+                <p>🏆 Awarded Best Participant at Young Leaders Conference<br>
+                🧭 Captain of my team<br>
+                🥇 Part of the 1st team to complete the hike challenge<br>
+                🤝 Networked with 100+ passionate individuals from all over Pakistan</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎖️</div>
+                <h3>HEC PUCE English Competition</h3>
+                <p>🥉 Selected as one of only 3 students for this prestigious HEC PUCE English Competition, demonstrating exceptional language proficiency and communication skills.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">📹</div>
+                <h3>Women Empowerment Video Contest</h3>
+                <p>🎥 Shortlisted in a nationwide Women Empowerment Video Competition, showcasing creativity and advocacy for gender equality and women's rights.</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎤</div>
+                <h3>MUN Leadership</h3>
+                <p>🎤 Chair/Delegate at multiple Model United Nations conferences including PKMUN and LUMUN<br>
+                🧠 Regular speaker at school and college events<br>
+                👩‍🏫 Successfully trained 100+ students in English language & communication</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Languages Section -->
+    <section id="languages" class="section">
+        <h2>Languages</h2>
+        <div class="skills-grid">
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Native 🇬🇧</div>
+                <span class="skill-icon">🗣️</span>
+                <h3>English</h3>
+                <p>Native proficiency - Teaching and training others in communication skills</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="100"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Native 🇵🇰</div>
+                <span class="skill-icon">🏠</span>
+                <h3>Urdu</h3>
+                <p>Native speaker - Pakistan's national language, fluent in all contexts</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="100"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Fluent 🇮🇳</div>
+                <span class="skill-icon">🎬</span>
+                <h3>Hindi</h3>
+                <p>Fluent understanding and speaking - Cultural connection through media</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="90"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Native 🏔️</div>
+                <span class="skill-icon">🏡</span>
+                <h3>Punjabi</h3>
+                <p>Native speaker - Regional language, deep cultural roots</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="95"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Native 🗻</div>
+                <span class="skill-icon">🏘️</span>
+                <h3>Pothwari</h3>
+                <p>Native speaker - Local dialect, family and community connections</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="95"></div>
+                </div>
+            </div>
+            <div class="skill-card card-3d">
+                <div class="skill-percentage">Beginner 🕌</div>
+                <span class="skill-icon">📖</span>
+                <h3>Arabic</h3>
+                <p>Learning journey - Religious studies and cultural understanding</p>
+                <div class="skill-progress">
+                    <div class="skill-progress-bar" data-width="25"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="section">
+        <h2>Giving Back</h2>
+        <div style="max-width: 1000px; margin: 0 auto; margin-bottom: 3rem;">
+            <div class="skill-card" style="padding: 3rem;">
+                <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 0;">
+                    I strongly believe in social contribution — from volunteering in education and mental health campaigns to working with local student support organizations. My role as a language coach helped me guide others in communication and self-expression. I thrive on meaningful conversations, awareness initiatives, and seeing people grow.
+                </p>
+            </div>
+        </div>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">👩‍🏫</div>
+                <h3>English Language Trainer</h3>
+                <p>LanguageCert Certified trainer with 100+ students successfully coached in communication and language skills</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🤝</div>
+                <h3>Volunteer Coach</h3>
+                <p>Providing mentorship and guidance to students in personal development and academic growth</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🎤</div>
+                <h3>Event Host & School Leader</h3>
+                <p>Leading school events, moderating discussions, and facilitating community engagement activities</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">🧠</div>
+                <h3>Mental Health Advocacy</h3>
+                <p>Participating in awareness campaigns and supporting student mental health initiatives</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Friend Reviews Section -->
+    <section id="friend-reviews" class="section">
+        <h2>Friend Reviews</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <p>Amna has this incredible ability to make everyone feel heard and valued. Her leadership during our YLC team activities was inspiring - she guided us through challenges with such grace and determination. She's not just a great speaker, but an amazing listener too!</p>
+                <div class="reviewer">
+                    <div class="reviewer-pic">👩</div>
+                    <div>
+                        <strong>Fatima Khan</strong>
+                        <p>YLC Team Member & Psychology Student</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <p>Working with Amna on MUN conferences has been incredible. She brings such depth to every debate and has this natural ability to connect with people from all backgrounds. Her English coaching helped me gain confidence I never knew I had!</p>
+                <div class="reviewer">
+                    <div class="reviewer-pic">👨</div>
+                    <div>
+                        <strong>Ahmed Ali</strong>
+                        <p>MUN Delegate & Former Student</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <p>Amna's passion for empowering others is contagious. She mentored me through some tough times and helped me find my voice. Her dedication to mental health awareness and youth development makes her a true role model for our generation.</p>
+                <div class="reviewer">
+                    <div class="reviewer-pic">👩</div>
+                    <div>
+                        <strong>Zara Sheikh</strong>
+                        <p>College Friend & Volunteer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Insights Section -->
+    <section id="insights" class="section">
+        <h2>💡 My Philosophy</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="skill-card" style="padding: 4rem; background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(224, 170, 255, 0.15)); border: 2px solid rgba(224, 170, 255, 0.4);">
+                <p style="font-size: 2rem; font-style: italic; color: #e0aaff; margin-bottom: 2rem; line-height: 1.4;">
+                    "I don't believe in perfect work. I believe in honest effort, growth, and the constant choice to evolve."
+                </p>
+                <p style="font-size: 1.2rem; opacity: 0.9; font-weight: 600;">— Amna Irfan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section">
+        <h2>Download CV</h2>
+        <div class="cv-container">
+            <p style="margin-bottom: 3rem; font-size: 1.3rem; opacity: 0.9;">Get a comprehensive overview of my professional journey and achievements</p>
+            <a href="#" class="cv-button" onclick="downloadCV()">📄 Download CV</a>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section">
+        <h2>Hobbies & Interests</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">📚</div>
+                <h3>Reading</h3>
+                <p>Passionate about psychology books, personal development literature, and exploring different perspectives through various genres. Books are my gateway to understanding the world and human nature.</p>
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🎬</div>
+                <h3>Video Making</h3>
+                <p>Creating engaging videos for social causes, educational content, and storytelling. I love bringing ideas to life through visual narratives and connecting with audiences through creative expression.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section">
+        <h2>Video Showcase</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="video-container" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden; cursor: pointer; transition: all 0.4s ease;" onclick="openVideoPopup()">
+                <div class="video-icon" style="font-size: 5rem; margin-bottom: 2rem; animation: videoPulse 2s ease-in-out infinite;">📹</div>
+                <h3 style="color: #e0aaff; margin-bottom: 1rem; font-size: 1.5rem;">MUN Performance & Coaching Highlights</h3>
+                <p style="opacity: 0.9; margin-bottom: 2rem;">Watch highlights from my Model United Nations chairing sessions, public speaking events, and English language coaching classes where I help students develop confidence and communication skills.</p>
+                <div style="background: linear-gradient(45deg, #9d4edd, #e0aaff); color: #fff; padding: 1rem 2rem; border-radius: 25px; display: inline-block; font-weight: bold;">▶️ Play Video</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bucket List Section -->
+    <section id="bucket-list" class="section">
+        <h2>Bucket List</h2>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div class="bucket-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="bucket-category">
+                    <h3 style="color: #e0aaff; margin-bottom: 2rem; font-size: 1.5rem; text-align: center;">🎓 Academic & Professional Goals</h3>
+                    <div class="bucket-item completed" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">✅</span>
+                        <span>Train 100+ students in English</span>
+                    </div>
+                    <div class="bucket-item completed" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">✅</span>
+                        <span>Win YLC Best Participant Award</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Complete Psychology degree with honors</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Speak at international youth conference</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Publish research on youth psychology</span>
+                    </div>
+                </div>
+                <div class="bucket-category">
+                    <h3 style="color: #e0aaff; margin-bottom: 2rem; font-size: 1.5rem; text-align: center;">🌟 Personal Dreams</h3>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Travel to 20 countries</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Learn Arabic fluently</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Write a book on youth empowerment</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Master public speaking in 3 languages</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Start a podcast on psychology</span>
+                    </div>
+                </div>
+                <div class="bucket-category">
+                    <h3 style="color: #e0aaff; margin-bottom: 2rem; font-size: 1.5rem; text-align: center;">💝 Impact Goals</h3>
+                    <div class="bucket-item completed" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">✅</span>
+                        <span>Lead youth development initiatives</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Establish mental health support center</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Create scholarship for underprivileged students</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Train 1000+ students in communication</span>
+                    </div>
+                    <div class="bucket-item" onclick="toggleBucketItem(this)">
+                        <span class="bucket-checkbox">⭕</span>
+                        <span>Launch women empowerment campaign</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2>Testimonials</h2>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-pic">👨‍🏫</div>
+                        <div>
+                            <strong>Dr. Ahmad Hassan</strong>
+                            <p>Psychology Professor</p>
+                        </div>
+                    </div>
+                    <p>"Amna demonstrates exceptional understanding of psychological principles and their practical applications. Her ability to connect theory with real-world leadership scenarios is remarkable. She has the rare combination of academic excellence and natural leadership qualities."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-pic">👩‍💼</div>
+                        <div>
+                            <strong>Sana Malik</strong>
+                            <p>Former Student, Now Confident Speaker</p>
+                        </div>
+                    </div>
+                    <p>"Amna's English coaching completely transformed my communication skills. She didn't just teach me language - she taught me confidence. Her patience and personalized approach helped me overcome my fear of public speaking and excel in my career."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-pic">👨‍💻</div>
+                        <div>
+                            <strong>Hassan Ali</strong>
+                            <p>YLC Fellow & Youth Leader</p>
+                        </div>
+                    </div>
+                    <p>"Working with Amna at YLC was inspiring. She led our team with such grace and determination, always ensuring everyone felt heard and valued. Her leadership during the hike challenge showed her ability to motivate and unite people toward common goals."</p>
+                </div>
+            </div>
+            
+            <div class="leave-review-section" style="text-align: center; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #e0aaff; margin-bottom: 2rem; font-size: 1.8rem;">💭 Leave a Review</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">Have you worked with Amna or been mentored by her? Share your experience!</p>
+                <button class="review-button" onclick="openReviewForm()" style="background: linear-gradient(45deg, #9d4edd, #e0aaff); color: #fff; padding: 1rem 2.5rem; border: none; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">✍️ Write a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>📞 Let's Connect</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="skill-card" style="padding: 3rem;">
+                <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9;">
+                    Open to speaking engagements, collaborations, mentoring opportunities, and training sessions!
+                </p>
+                <div class="awards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div class="award-card" style="padding: 2rem;">
+                        <div class="award-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>evolve.withamna@gmail.com</p>
+                    </div>
+                    <div class="award-card" style="padding: 2rem;">
+                        <div class="award-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p>@evolve.withamna</p>
+                    </div>
+                    <div class="award-card" style="padding: 2rem;">
+                        <div class="award-icon">🔗</div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        const cursor = document.getElementById('cursor');
+        const trails = [];
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+            
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = e.clientX - 3 + 'px';
+            trail.style.top = e.clientY - 3 + 'px';
+            document.body.appendChild(trail);
+            
+            trails.push(trail);
+            
+            setTimeout(() => {
+                trail.style.opacity = '0';
+                setTimeout(() => {
+                    if (trail.parentNode) {
+                        trail.parentNode.removeChild(trail);
+                    }
+                    trails.splice(trails.indexOf(trail), 1);
+                }, 300);
+            }, 100);
+        });
+
+        function createBgParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'bg-particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.width = particle.style.height = Math.random() * 20 + 10 + 'px';
+            particle.style.animationDuration = Math.random() * 10 + 15 + 's';
+            document.getElementById('interactiveBg').appendChild(particle);
+
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, 25000);
+        }
+
+        setInterval(createBgParticle, 3000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    const progressBars = entry.target.querySelectorAll('.skill-progress-bar');
+                    progressBars.forEach((bar, index) => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width + '%';
+                        }, 500 + (index * 200));
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const scrolled = window.scrollY;
+            
+            if (scrolled > 100) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            }
+        });
+
+        document.querySelectorAll('.scattered-text').forEach(text => {
+            text.addEventListener('click', () => {
+                text.style.animation = 'none';
+                text.style.opacity = '1';
+                text.style.transform = 'scale(1.5) rotate(360deg)';
+                
+                setTimeout(() => {
+                    text.style.animation = 'textFloat 8s ease-in-out infinite';
+                    text.style.transform = 'scale(1) rotate(0deg)';
+                }, 1000);
+            });
+        });
+
+        function downloadCV() {
+            const cvContent = `
+SARAH JOHNSON - SENIOR FULL-STACK DEVELOPER & TEAM LEAD
+
+Contact Information:
+Email: sarah.johnson@email.com
+Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/sarahjohnson
+GitHub: github.com/sarahjohnson
+Portfolio: sarahjohnson.dev
+
+Professional Summary:
+Innovative Senior Full-Stack Developer and Team Lead with 6+ years of experience in building scalable web applications and leading diverse development teams. Expertise in React, Node.js, cloud technologies, and AI integration. Passionate about creating inclusive tech environments and mentoring the next generation of developers.
+
+Technical Skills:
+Frontend: React, Vue.js, Angular, TypeScript, HTML5, CSS3, Sass
+Backend: Node.js, Python, Java, PHP, GraphQL, REST APIs
+Databases: MongoDB, PostgreSQL, MySQL, Redis
+Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD, Jenkins
+Design: Figma, Adobe XD, Sketch, Prototyping
+AI/ML: TensorFlow, PyTorch, Scikit-learn
+
+Professional Experience:
+
+Senior Full-Stack Developer & Team Lead | TechCorp Inc. | 2022-Present
+• Leading a diverse team of 12 developers in building next-generation web applications
+• Implemented microservices architecture improving system performance by 60%
+• Reduced deployment time by 75% through automated CI/CD pipelines
+• Mentored 8 junior developers, with 100% promotion rate within 18 months
+
+Software Developer & UI/UX Designer | StartupXYZ | 2020-2022
+• Developed and designed multiple client projects using React and Node.js
+• Created design systems improving development efficiency by 40%
+• Collaborated with cross-functional teams to deliver user-centered solutions
+• Maintained 99.9% uptime across all deployed applications
+
+Junior Developer | WebSolutions Ltd. | 2019-2020
+• Promoted from intern to junior developer within 6 months
+• Worked on e-commerce platforms serving 100K+ users
+• Learned industry best practices in agile development
+
+Education:
+Master of Computer Science | Stanford University | 2020-2022
+• Specialized in AI and Human-Computer Interaction
+• Graduated Summa Cum Laude
+• Research focus: Neural networks and UX optimization
+
+Bachelor of Software Engineering | MIT | 2016-2020
+• President of Women in Tech club
+• Lead organizer of annual hackathon
+
+Certifications:
+• Full-Stack Web Development - freeCodeCamp (2019)
+• AWS Certified Solutions Architect (2021)
+• Google Cloud Professional Developer (2022)
+
+Awards & Recognition:
+• Developer of the Year - TechCorp Inc. (2023)
+• Innovation Excellence Award - Global Tech Summit (2022)
+• Best Hackathon Project - CodeFest (2021)
+• Women in Tech Leadership Award (2023)
+
+Key Achievements:
+• Successfully launched 8 major products generating $5M+ revenue
+• Led teams of 20+ members with 100% on-time delivery rate
+• Improved application performance by 80% through optimization
+• Contributed to 15+ open source projects with 500+ GitHub stars
+• Active maintainer of 3 popular JavaScript libraries
+
+Languages:
+• English (Native)
+• Spanish (Fluent)
+• Mandarin (Conversational)
+
+Interests:
+Photography, Music Production, Marathon Running, Digital Art, Rock Climbing, Sustainable Living, Theater & Acting, Tech Blogging
+            `;
+
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Amna_Irfan_CV.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            const button = document.querySelector('.cv-button');
+            button.innerHTML = '✅ Downloaded!';
+            button.style.background = 'linear-gradient(45deg, #10b981, #34d399)';
+            
+            setTimeout(() => {
+                button.innerHTML = '📄 Download CV';
+                button.style.background = 'linear-gradient(45deg, #9d4edd, #ffd60a)';
+            }, 2000);
+        }
+
+        document.querySelectorAll('.skill-card, .award-card, .review-card, .hobby-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = (this.style.transform || '') + ' scale(1.02)';
+                
+                const randomRotation = (Math.random() - 0.5) * 4;
+                this.style.transform += ` rotate(${randomRotation}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = this.style.transform
+                    .replace(' scale(1.02)', '')
+                    .replace(/rotate\([^)]*\)/g, '');
+            });
+        });
+
+        document.querySelectorAll('.skill-progress-bar').forEach(bar => {
+            bar.style.width = '0%';
+        });
+
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                document.body.style.animation = 'rainbow 2s infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 10000);
+            }
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.header');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'fixed';
+            ripple.style.left = e.clientX - 25 + 'px';
+            ripple.style.top = e.clientY - 25 + 'px';
+            ripple.style.width = '50px';
+            ripple.style.height = '50px';
+            ripple.style.background = 'radial-gradient(circle, rgba(255, 214, 10, 0.6), transparent)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.animation = 'rippleEffect 0.6s ease-out';
+            ripple.style.zIndex = '9999';
+            
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => {
+                if (ripple.parentNode) {
+                    ripple.parentNode.removeChild(ripple);
+                }
+            }, 600);
+        });
+
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes rippleEffect {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        function openVideoPopup() {
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                cursor: pointer;
+            `;
+            
+            popup.innerHTML = `
+                <div style="text-align: center; color: white; max-width: 600px; padding: 2rem;">
+                    <div style="font-size: 8rem; margin-bottom: 2rem; animation: videoPulse 2s ease-in-out infinite;">📹</div>
+                    <h2 style="margin-bottom: 1rem; color: #e0aaff;">Video Demo</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">This would show Amna's MUN performance and coaching highlights!</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Click anywhere to close</p>
+                </div>
+            `;
+            
+            popup.addEventListener('click', () => {
+                document.body.removeChild(popup);
+            });
+            
+            document.body.appendChild(popup);
+        }
+
+        function toggleBucketItem(item) {
+            const checkbox = item.querySelector('.bucket-checkbox');
+            const isCompleted = item.classList.contains('completed');
+            
+            if (isCompleted) {
+                item.classList.remove('completed');
+                checkbox.textContent = '⭕';
+            } else {
+                item.classList.add('completed');
+                checkbox.textContent = '✅';
+                
+                item.style.animation = 'none';
+                setTimeout(() => {
+                    item.style.animation = 'completionBounce 0.6s ease';
+                }, 10);
+            }
+        }
+
+        function openReviewForm() {
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                padding: 2rem;
+            `;
+            
+            popup.innerHTML = `
+                <div style="background: rgba(157, 78, 221, 0.1); backdrop-filter: blur(20px); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 500px; width: 100%; color: white;">
+                    <h3 style="color: #e0aaff; margin-bottom: 2rem; text-align: center;">✍️ Write a Review</h3>
+                    <form onsubmit="submitReview(event)">
+                        <input type="text" placeholder="Your Name" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; backdrop-filter: blur(10px);" required>
+                        <input type="text" placeholder="Your Title/Company" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; backdrop-filter: blur(10px);" required>
+                        <textarea placeholder="Share your experience working with Amna..." style="width: 100%; padding: 1rem; margin-bottom: 2rem; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white; backdrop-filter: blur(10px); min-height: 120px; resize: vertical;" required></textarea>
+                        <div style="display: flex; gap: 1rem; justify-content: center;">
+                            <button type="submit" style="background: linear-gradient(45deg, #9d4edd, #e0aaff); color: white; padding: 1rem 2rem; border: none; border-radius: 25px; cursor: pointer; font-weight: bold;">Submit Review</button>
+                            <button type="button" onclick="closeReviewForm()" style="background: rgba(255, 255, 255, 0.1); color: white; padding: 1rem 2rem; border: none; border-radius: 25px; cursor: pointer;">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            popup.id = 'reviewPopup';
+            document.body.appendChild(popup);
+        }
+
+        function closeReviewForm() {
+            const popup = document.getElementById('reviewPopup');
+            if (popup) {
+                document.body.removeChild(popup);
+            }
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+            alert('Thank you for your review! Amna appreciates your feedback. 💜');
+            closeReviewForm();
+        }
+
+        const completionStyle = document.createElement('style');
+        completionStyle.textContent = `
+            @keyframes completionBounce {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+        `;
+        document.head.appendChild(completionStyle);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9609433903e1f4aa',t:'MTc1Mjc1MDMwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
